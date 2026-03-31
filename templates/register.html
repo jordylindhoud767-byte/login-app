@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Register</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="login-box">
+        <h1>Register</h1>
+
+        {% if error %}
+            <p class="error">{{ error }}</p>
+        {% endif %}
+
+        <form method="POST" action="/register">
+            <label>Username:</label>
+            <input type="text" name="username">
+
+            <label>Password:</label>
+            <input type="password" name="password">
+
+            <button type="submit">Register</button>
+        </form>
+
+        <p style="text-align: center; margin-top: 15px;">
+            Already have an account? <a href="/">Login here</a>
+        </p>
+    </div>
+</body>
+</html>
