@@ -1,31 +1,49 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Login</title>
+    <title>NEXIO Shop</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
-    <div class="login-box">
-        <h1>Login</h1>
+    <div>
+        <div class="logo">
+            <div class="logo-shapes">
+                <div class="logo-circle"></div>
+                <div class="logo-rect"></div>
+                <div class="logo-circle"></div>
+            </div>
+            <p class="logo-name">NEXIO</p>
+        </div>
 
-        {% if error %}
-            <p class="error">{{ error }}</p>
-        {% endif %}
+        <div class="login-card">
+            <h2>Log in</h2>
 
-        <form method="POST" action="/login">
-            <label>Username:</label>
-            <input type="text" name="username">
+            {% if error %}
+                <p class="error">{{ error }}</p>
+            {% endif %}
 
-            <label>Password:</label>
-            <input type="password" name="password">
+            <form method="POST" action="/login">
+                <label>Username</label>
+                <input type="text" name="username" placeholder="Enter your username">
 
-            <button type="submit">Login</button>
-        </form>
+                <label>Password</label>
+                <input type="password" name="password" placeholder="••••••••">
 
-<p style="text-align: center; margin-top: 15px;">
-    No account yet? <a href="/register">Register here</a>
-</p>
+                <div class="forgot">
+                    <a href="#">Forgot password?</a>
+                </div>
 
- </div>
+                <button type="submit">Login</button>
+            </form>
+
+            <div class="divider">
+                <div class="divider-line"></div>
+                <span>or</span>
+                <div class="divider-line"></div>
+            </div>
+
+            <p class="register-link">No account yet? <a href="/register">Register here</a></p>
+        </div>
+    </div>
 </body>
 </html>
